@@ -1,4 +1,4 @@
-# Daynis H264 Media Stream
+# Daynis H264 Flutter Media Stream
 
 A Flutter package for streaming raw H264 video data on the web. JMuxer library is used for handling raw H264 video streams and displaying them in a Flutter web application.
 
