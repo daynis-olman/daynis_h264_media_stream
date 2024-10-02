@@ -1,0 +1,28 @@
+name: daynis_h264_media_stream
+description: "A Flutter package for streaming raw H264 video data on the web."
+version: 0.0.1
+homepage: https://github.com/daynis-olman/daynis_h264_media_stream
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+# Flutter package settings
+flutter:
+  plugin:
+    platforms:
+      web:
+        pluginClass: DaynisH264MediaStreamPlugin
+
+# Web-specific dependencies (e.g., JS interop)
+dependencies:
+  js: ^0.6.4
