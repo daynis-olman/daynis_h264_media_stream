@@ -1,39 +1,38 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Daynis H264 Media Stream
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A Flutter package for streaming raw H264 video data on the web. JMuxer library is used for handling raw H264 video streams and displaying them in a Flutter web application.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Stream raw H264 video from a server endpoint.
+- Embed a video player within a Flutter web app.
+- Use `JMuxer` to handle raw H264 data and display it seamlessly.
 
-## Getting started
+## Getting Started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+### Prerequisites
 
-## Usage
+- **Flutter SDK:** Ensure you have the Flutter SDK installed and updated.
+- **Web Browser:** The package is intended for Flutter web applications, so a modern browser (e.g., Chrome) is required.
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+## Installation
 
-```dart
-const like = 'sample';
-```
+1. **Add the Dependency**
 
-## Additional information
+   In your project's `pubspec.yaml`, add `daynis_h264_media_stream` as a dependency:
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+   ```yaml
+   dependencies:
+     daynis_h264_media_stream:
+       git:
+         url: https://github.com/daynis-olman/daynis_h264_media_stream.git
+
+2. **Run the Application**
+`flutter run -d chrome`
+
+## Contributions
+Contributions are welcome! Please fork the repository and submit a pull request for any feature requests or bug fixes.
+
+## Acknowledgements
+
+•	JMuxer for H264 video handling on the web.
