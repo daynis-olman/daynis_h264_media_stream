@@ -2,17 +2,46 @@
 library daynis_h264_media_stream;
 
 import 'dart:html';
+import 'dart:typed_data'; // For Uint8List and ByteBuffer
 import 'package:js/js.dart';
 
-// Initialize JMuxer in Dart
+// Define JMuxerOptions to pass as options to the JMuxer object
+@JS()
+@anonymous
+class JMuxerOptions {
+  external factory JMuxerOptions({
+    required String node,
+    required String mode,
+    required int fps,
+    required int flushingTime,
+  });
+}
+
+// Define JMuxerFeedData to pass video chunks
+@JS()
+@anonymous
+class JMuxerFeedData {
+  external factory JMuxerFeedData({required Uint8List video});
+}
+
+// External JMuxer class to use in Dart code
+@JS('JMuxer')
+class JMuxer {
+  external JMuxer(JMuxerOptions options);
+  external void feed(JMuxerFeedData data);
+}
+
+// Function to initialize the H264 stream in the video player
 void initializeH264Stream(String streamUrl) {
   final videoElement = VideoElement()
     ..id = 'videoPlayer'
     ..controls = true
     ..autoplay = true;
 
+  // Append the video element to the body
   document.body?.append(videoElement);
 
+  // Initialize JMuxer with options
   final jmuxer = JMuxer(JMuxerOptions(
     node: '#videoPlayer',
     mode: 'video',
@@ -32,33 +61,10 @@ void _fetchAndStreamH264(JMuxer jmuxer, String streamUrl) async {
       responseType: 'arraybuffer',
     );
 
-    // Stream the fetched H264 data to JMuxer
+    // Convert the response into Uint8List to be fed into JMuxer
     final reader = (response.response as ByteBuffer).asUint8List();
     jmuxer.feed(JMuxerFeedData(video: reader));
   } catch (error) {
     print('Error fetching video frames: $error');
   }
-}
-
-@JS('JMuxer')
-class JMuxer {
-  external JMuxer(JMuxerOptions options);
-  external void feed(JMuxerFeedData data);
-}
-
-@JS()
-@anonymous
-class JMuxerOptions {
-  external factory JMuxerOptions({
-    required String node,
-    required String mode,
-    required int fps,
-    required int flushingTime,
-  });
-}
-
-@JS()
-@anonymous
-class JMuxerFeedData {
-  external factory JMuxerFeedData({required Uint8List video});
 }
