@@ -10,14 +10,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  js: ^0.6.4 # Added version constraint for js package
+  js: ^0.6.4
   flutter_web_plugins:
     sdk: flutter
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0 # Added version constraint for flutter_lints
+  flutter_lints: ^2.0.0
 
 flutter:
   plugin:
@@ -26,6 +26,5 @@ flutter:
         pluginClass: DaynisH264MediaStreamPlugin
         fileName: daynis_h264_media_stream_web.dart
 
-  # Reference local assets
   assets:
     - assets/jmuxer.js

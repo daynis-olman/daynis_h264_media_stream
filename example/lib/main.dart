@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:daynis_h264_media_stream/daynis_h264_media_stream.dart';
+import 'package:daynis_h264_media_stream/daynis_h264_media_stream.dart'; // Make sure this is correct
 
 void main() {
   runApp(MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
             onPressed: () async {
               final videoUrl = 'YOUR_H264_STREAM_URL';
               try {
-                await DaynisH264MediaStream.playVideo(videoUrl);
+                await DaynisH264MediaStream.playVideo(videoUrl); // Make sure DaynisH264MediaStream exists
                 print('Video started playing.');
               } catch (e) {
                 print('Error playing video: $e');
