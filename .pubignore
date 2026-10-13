@@ -1,0 +1,13 @@
+# pub uses this file instead of .gitignore when present.
+.DS_Store
+.idea/
+*.iml
+.dart_tool/
+build/
+pubspec.lock
+.fvm/
+.fvmrc
+.github/
+example/build/
+example/.dart_tool/
+example/pubspec.lock

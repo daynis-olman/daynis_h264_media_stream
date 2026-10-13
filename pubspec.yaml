@@ -1,31 +1,35 @@
 name: daynis_h264_media_stream
-description: "A Flutter package for streaming raw H264 video data on the web."
-version: 0.0.1
+description: >-
+  Play live H.264 video streamed over HTTP (multipart/x-mixed-replace or raw
+  Annex-B) in Flutter web with WebCodecs or Media Source Extensions, no JS.
+version: 1.0.1
 homepage: https://github.com/daynis-olman/daynis_h264_media_stream
+repository: https://github.com/daynis-olman/daynis_h264_media_stream
+issue_tracker: https://github.com/daynis-olman/daynis_h264_media_stream/issues
+topics:
+  - video
+  - h264
+  - streaming
+  - web
+  - mse
 
 environment:
-  sdk: ">=2.17.0 <3.0.0"
-  flutter: ">=3.3.0"
+  sdk: ">=3.8.0 <4.0.0"
+  flutter: ">=3.32.0"
+
+platforms:
+  web:
 
 dependencies:
   flutter:
     sdk: flutter
-  js: ^0.6.4 # Added version constraint for js package
-  flutter_web_plugins:
-    sdk: flutter
+  web: ^1.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0 # Added version constraint for flutter_lints
+  flutter_lints: ^6.0.0
 
-flutter:
-  plugin:
-    platforms:
-      web:
-        pluginClass: DaynisH264MediaStreamPlugin
-        fileName: daynis_h264_media_stream_web.dart
-
-  # Reference local assets
-  assets:
-    - assets/jmuxer.js
+screenshots:
+  - description: Example app playing a live multipart H.264 stream with telemetry.
+    path: doc/screenshot.png
